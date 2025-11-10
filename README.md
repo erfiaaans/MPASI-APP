@@ -24,5 +24,26 @@ MPASI App adalah aplikasi berbasis Flutter yang bertujuan membantu orang tua dal
 
 ## Tampilan Aplikasi
 
-### Kalkulator Gizi
-![Beranda MPASI App](docs/images/home_screen.png)
+<table>
+  <tr>
+    <td align="center">
+      <img src="docs/images/beranda.png" alt="Beranda MPASI App" width="250"/><br>
+      Beranda
+    </td>
+    <td align="center">
+      <img src="docs/images/gizi.png" alt="Kalkulator Gizi MPASI App" width="250"/><br>
+      Kalkulator Gizi
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="docs/images/resep.png" alt="Resep MPASI App" width="250"/><br>
+      Resep
+    </td>
+    <td align="center">
+      <img src="docs/images/bookmark.png" alt="Bookmark MPASI App" width="250"/><br>
+      Bookmark
+    </td>
+  </tr>
+</table>
+

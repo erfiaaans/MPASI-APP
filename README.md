@@ -1,16 +1,28 @@
-# mpasi_app
+# MPASI App
 
-A new Flutter project.
+**Tugas Pemrograman Bergerak**    
+**Nama:** Erfia Nadia Safari  
+**NIM:** 2205101081  
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Deskripsi Proyek
 
-A few resources to get you started if this is your first Flutter project:
+MPASI App adalah aplikasi berbasis Flutter yang bertujuan membantu orang tua dalam memberikan **Makanan Pendamping ASI (MPASI)** kepada bayi dengan cara yang lebih praktis. Aplikasi ini menyediakan fitur-fitur seperti resep MPASI, bookmark resep favorit, dan kalkulator gizi sederhana.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Persiapan & Instalasi
+
+1. Pastikan Flutter sudah terpasang di komputer Anda.  
+2. Clone repository ini:  
+    ```bash
+    git clone https://github.com/erfiaaans/MPASI-APP
+    ```
+3. cd mpasi_app
+4. flutter run
+
+## Tampilan Aplikasi
+
+### Kalkulator Gizi
+![Beranda MPASI App](docs/images/home_screen.png)

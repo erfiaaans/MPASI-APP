@@ -46,7 +46,7 @@ class _MainPageState extends State<MainPage> {
     _pages = [
       HomePage(onTapMenu: _onItemTapped), // <-- ini penting
       const GiziPage(),
-      const RecipesPage(),
+      RecipesPage(),
       const BookmarkPage(),
       const ProfilePage(),
     ];

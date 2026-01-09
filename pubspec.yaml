@@ -43,6 +43,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.3.10
 
 
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -96,3 +97,14 @@ flutter_icons:
   ios: true
   image_path: "assets/icons/app_icon.png"
   remove_alpha_ios: true
+
+flutter_native_splash:
+  color: "#FFFFFF"
+  color_dark: "#000000"
+  image_dark: assets/icons/splash.jpg
+  image: assets/icons/splash.jpg
+  android: true
+  ios: true
+  android_12:
+    image: assets/icons/splash.jpg
+    color: "#FFFFFF"

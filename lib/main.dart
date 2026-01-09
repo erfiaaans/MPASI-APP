@@ -1,4 +1,3 @@
-// lib/main.dart
 import 'package:flutter/material.dart';
 import 'pages/home.dart';
 import 'pages/calculator.dart';
@@ -42,9 +41,8 @@ class _MainPageState extends State<MainPage> {
   @override
   void initState() {
     super.initState();
-    // Kirim callback _onItemTapped ke HomePage
     _pages = [
-      HomePage(onTapMenu: _onItemTapped), // <-- ini penting
+      HomePage(onTapMenu: _onItemTapped),
       const GiziPage(),
       RecipesPage(),
       const BookmarkPage(),

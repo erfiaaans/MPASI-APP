@@ -1,4 +1,3 @@
-// lib/widgets/recipe_detail_modal.dart
 import 'package:flutter/material.dart';
 
 typedef RecipeActionCallback =
@@ -87,7 +86,6 @@ class _RecipeDetailModalState extends State<RecipeDetailModal> {
   }
 }
 
-// helper function
 void showRecipeDetailModal({
   required BuildContext context,
   required Map<String, String> recipe,
@@ -96,7 +94,7 @@ void showRecipeDetailModal({
 }) {
   showDialog(
     context: context,
-    barrierDismissible: false, // 👈 optional (lebih aman)
+    barrierDismissible: false,
     builder: (_) => RecipeDetailModal(
       recipe: recipe,
       actionText: actionText,

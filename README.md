@@ -8,9 +8,11 @@
 
 ## Deskripsi Proyek
 
-MPASI App adalah aplikasi berbasis Flutter yang bertujuan membantu orang tua dalam memberikan **Makanan Pendamping ASI (MPASI)** kepada bayi dengan cara yang lebih praktis. Aplikasi ini menyediakan fitur-fitur seperti resep MPASI, bookmark resep favorit, dan kalkulator gizi sederhana.
+**MPASI Care** membantu orang tua menyiapkan menu **Makanan Pendamping ASI (MPASI)** yang sehat, bergizi, dan sesuai dengan tahapan usia bayi secara praktis.
 
----
+Aplikasi berbasis Flutter ini dirancang sebagai panduan MPASI yang mudah digunakan oleh orang tua. MPASI Care menyediakan berbagai resep MPASI yang disusun secara terstruktur berdasarkan usia bayi, dilengkapi dengan fitur bookmark untuk menyimpan resep favorit serta kalkulator gizi sederhana untuk membantu memperkirakan kebutuhan nutrisi bayi. Dengan tampilan yang sederhana dan ramah pengguna, MPASI Care diharapkan dapat menjadi pendamping orang tua dalam mendukung tumbuh kembang anak secara optimal.
+
+
 
 ## Persiapan & Instalasi
 

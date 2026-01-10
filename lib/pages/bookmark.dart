@@ -1,4 +1,3 @@
-// lib/pages/bookmark.dart
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -32,7 +31,6 @@ class _BookmarkPageState extends State<BookmarkPage> {
     loadData();
   }
 
-  // 🔹 LOAD BOOKMARK + RECIPE
   Future<void> loadData() async {
     setState(() {
       isLoading = true;
@@ -40,7 +38,6 @@ class _BookmarkPageState extends State<BookmarkPage> {
     });
 
     try {
-      // fetch recipe
       final recipeRes = await http.get(Uri.parse(recipeApi));
       final List recipeData = jsonDecode(recipeRes.body);
 
@@ -54,7 +51,6 @@ class _BookmarkPageState extends State<BookmarkPage> {
           },
       };
 
-      // fetch bookmark
       final bookmarkRes = await http.get(Uri.parse(bookmarkApi));
       final List bookmarkData = jsonDecode(bookmarkRes.body);
 
@@ -69,7 +65,6 @@ class _BookmarkPageState extends State<BookmarkPage> {
     }
   }
 
-  // 🔹 DELETE BOOKMARK
   Future<void> removeBookmark(
     Map<String, String> recipe,
     String bookmarkId,
@@ -85,12 +80,10 @@ class _BookmarkPageState extends State<BookmarkPage> {
 
   @override
   Widget build(BuildContext context) {
-    // 🔄 Loading
     if (isLoading) {
       return const Center(child: CircularProgressIndicator());
     }
 
-    // ❌ Error
     if (hasError) {
       return Center(
         child: Column(
@@ -104,7 +97,6 @@ class _BookmarkPageState extends State<BookmarkPage> {
       );
     }
 
-    // 📭 Empty
     if (bookmarks.isEmpty) {
       return const Center(
         child: Text(
@@ -114,7 +106,6 @@ class _BookmarkPageState extends State<BookmarkPage> {
       );
     }
 
-    // 📋 List
     return ListView.builder(
       padding: const EdgeInsets.all(16),
       itemCount: bookmarks.length,
@@ -122,12 +113,10 @@ class _BookmarkPageState extends State<BookmarkPage> {
         final bookmark = bookmarks[index];
         final recipeId = bookmark['recipe_id'];
 
-        // 🔴 recipe bisa NULL
         final recipe = recipesById[recipeId];
 
-        // ✅ JANGAN render kalau recipe tidak ditemukan
         if (recipe == null) {
-          return const SizedBox(); // atau tampilkan placeholder
+          return const SizedBox();
         }
 
         return Card(

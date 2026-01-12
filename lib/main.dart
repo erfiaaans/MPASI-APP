@@ -16,12 +16,12 @@ class MPASIApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Aplikasi MPASI',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange),
         useMaterial3: true,
       ),
       home: const MainPage(),
-      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -35,29 +35,42 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int _selectedIndex = 0;
-
-  late final List<Widget> _pages;
-
-  @override
-  void initState() {
-    super.initState();
-    _pages = [
-      HomePage(onTapMenu: _onItemTapped),
-      const GiziPage(),
-      RecipesPage(),
-      const BookmarkPage(),
-      const ProfilePage(),
-    ];
-  }
+  String? recipeSearchQuery;
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+
+      if (index == 2) {
+        recipeSearchQuery = null;
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    final pages = [
+      HomePage(
+        onTapMenu: _onItemTapped,
+        onOpenRecipeWithQuery: (query) {
+          setState(() {
+            recipeSearchQuery = null;
+          });
+
+          Future.microtask(() {
+            setState(() {
+              recipeSearchQuery = query;
+              _selectedIndex = 2;
+            });
+          });
+        },
+      ),
+      const GiziPage(),
+      RecipesPage(initialQuery: recipeSearchQuery),
+      const BookmarkPage(),
+      const ProfilePage(),
+    ];
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -72,13 +85,13 @@ class _MainPageState extends State<MainPage> {
         backgroundColor: Colors.orange.shade400,
         foregroundColor: Colors.white,
       ),
-      body: _pages[_selectedIndex],
+      body: IndexedStack(index: _selectedIndex, children: pages),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
+        type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.orange,
         unselectedItemColor: Colors.grey,
-        type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Beranda'),
           BottomNavigationBarItem(icon: Icon(Icons.calculate), label: 'Gizi'),

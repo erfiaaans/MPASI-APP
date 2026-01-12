@@ -6,7 +6,9 @@ import '../widgets/recipe_detail_modal.dart';
 enum SortOption { nameAsc, nameDesc, ageAsc, ageDesc }
 
 class RecipesPage extends StatefulWidget {
-  const RecipesPage({super.key});
+  final String? initialQuery;
+
+  const RecipesPage({super.key, this.initialQuery});
 
   @override
   State<RecipesPage> createState() => _RecipesPageState();
@@ -43,6 +45,22 @@ class _RecipesPageState extends State<RecipesPage> {
     super.dispose();
   }
 
+  @override
+  void didUpdateWidget(covariant RecipesPage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    if (widget.initialQuery != null &&
+        widget.initialQuery != oldWidget.initialQuery) {
+      searchController.text = widget.initialQuery!;
+      filterRecipes(widget.initialQuery!);
+    }
+
+    if (widget.initialQuery == null && oldWidget.initialQuery != null) {
+      searchController.clear();
+      filterRecipes('');
+    }
+  }
+
   int extractAge(String usia) {
     final match = RegExp(r'\d+').firstMatch(usia);
     return match != null ? int.parse(match.group(0)!) : 0;
@@ -64,15 +82,21 @@ class _RecipesPageState extends State<RecipesPage> {
           )
           .toList();
 
-      setState(() {
-        allRecipes = mapped;
-        recipes = mapped;
-      });
+      allRecipes = mapped;
+      recipes = mapped;
+
+      if (widget.initialQuery != null && widget.initialQuery!.isNotEmpty) {
+        searchController.text = widget.initialQuery!;
+        filterRecipes(widget.initialQuery!);
+      }
+
+      setState(() {});
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Gagal mengambil data resep')),
       );
     } finally {
+      if (!mounted) return;
       setState(() => isLoadingRecipes = false);
     }
   }

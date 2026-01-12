@@ -32,6 +32,8 @@ class _BookmarkPageState extends State<BookmarkPage> {
   }
 
   Future<void> loadData() async {
+    if (!mounted) return;
+
     setState(() {
       isLoading = true;
       hasError = false;
@@ -61,6 +63,7 @@ class _BookmarkPageState extends State<BookmarkPage> {
     } catch (e) {
       hasError = true;
     } finally {
+      if (!mounted) return;
       setState(() => isLoading = false);
     }
   }

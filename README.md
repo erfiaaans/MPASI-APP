@@ -43,8 +43,35 @@ Aplikasi berbasis Flutter ini dirancang sebagai panduan MPASI yang mudah digunak
       Resep
     </td>
     <td align="center">
+      <img src="docs/images/detail.png" alt="Bookmark MPASI App" width="250"/><br>
+      Detail Resep
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
       <img src="docs/images/bookmark.png" alt="Bookmark MPASI App" width="250"/><br>
       Bookmark
+    </td>
+    <td align="center">
+      <img src="docs/images/profil.png" alt="Resep MPASI App" width="250"/><br>
+      Profil
+    </td>
+  </tr>
+  <tr>
+  <td align="center">
+      <img src="docs/images/tentang.png" alt="Bookmark MPASI App" width="250"/><br>
+      Tentang Aplikasi
+    </td>
+    <td align="center">
+      <img src="docs/images/kebijakan.png" alt="Bookmark MPASI App" width="250"/><br>
+      Kebijakan Privasi
+    </td>
+    
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="docs/images/syarat.png" alt="Resep MPASI App" width="250"/><br>
+      Syarat & Ketentuan
     </td>
   </tr>
 </table>
